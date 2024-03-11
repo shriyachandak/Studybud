@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+.profile_area{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+</style>
+<div class="profile_area">
+    <div>
+        {% include 'base/topics_component.html' %}
+    </div>
+
+    <div>
+        <h1>{{user.username}}</h1> 
+        {% include 'base/feed_component.html' %}
+    </div>
+
+    <div>
+        {% include 'base/activity_feed.html' %}
+    </div>
+</div>
+{% endblock content %}

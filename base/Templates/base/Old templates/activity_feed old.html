@@ -1,0 +1,10 @@
+<h3>Recent Activity</h3>
+{% for message in room_messages %}
+<small><a href="{% url 'user_profile' message.user.id %}">@{{message.user}}</a> {{message.created | timesince}}</small>
+<small>replied to "{{message.room}}"</small>
+<div>
+    {{message}}<!--  only message not message.body coz messages model has a str function that trims it down to 50 char only -->
+</div>
+<hr>    
+
+{% endfor %}     

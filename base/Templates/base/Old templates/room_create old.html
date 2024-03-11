@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div>
+    <form method="POST" action="">
+        {% csrf_token %} <!-- this it used to make security authorisation to avoid malpractices -->
+        {{form.as_p}} <!--.as_p is used to make content in one para-->
+        <input type="submit" value="Submit">
+    
+    </form>
+</div>
+{% endblock content%}
